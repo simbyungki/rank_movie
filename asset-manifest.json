@@ -1,0 +1,13 @@
+{
+  "main.css": "/rank_movie/static/css/main.3b38d8aa.chunk.css",
+  "main.js": "/rank_movie/static/js/main.f81c0420.chunk.js",
+  "main.js.map": "/rank_movie/static/js/main.f81c0420.chunk.js.map",
+  "runtime~main.js": "/rank_movie/static/js/runtime~main.1183ada6.js",
+  "runtime~main.js.map": "/rank_movie/static/js/runtime~main.1183ada6.js.map",
+  "static/js/2.f2fffbf5.chunk.js": "/rank_movie/static/js/2.f2fffbf5.chunk.js",
+  "static/js/2.f2fffbf5.chunk.js.map": "/rank_movie/static/js/2.f2fffbf5.chunk.js.map",
+  "index.html": "/rank_movie/index.html",
+  "precache-manifest.e7e8d95786004708602837f58fd6268b.js": "/rank_movie/precache-manifest.e7e8d95786004708602837f58fd6268b.js",
+  "service-worker.js": "/rank_movie/service-worker.js",
+  "static/css/main.3b38d8aa.chunk.css.map": "/rank_movie/static/css/main.3b38d8aa.chunk.css.map"
+}
