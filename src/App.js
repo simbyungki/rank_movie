@@ -7,7 +7,8 @@ class App extends Component {
     //https://yts.am/api
     //sort : String (title, year, rating, peers, seeds, download_count, like_count, date_added)
     state = {
-        sortType: 'download_count'
+        sortType: 'download_count',
+        isLoading: false,
     }
 
     componentDidMount(){
@@ -31,23 +32,35 @@ class App extends Component {
     }
 
     _getMovies = async () => {
-        const movies = await this._callApi()
+        const movies = await this._callApi();
         this.setState({
             movies
         });
+        console.log(this.state);
     }
 
     _callApi = () => {
         return fetch(`https://yts.am/api/v2/list_movies.json?sort_by=${this.state.sortType}`)
         .then(response => response.json())
         .then(json => json.data.movies)
+        .then(console.log('complete'))
         .catch(err => console.log(err))
     }
 
-    _changeSortType = () => {
-        const {sortType} = this.state;
-        console.log();
-        
+    _changeSortType = (sortType, tabId) => {
+        //const {sortType} = this.state;
+        const sortCategory = document.querySelector('.Sort');
+        const sortBtn = sortCategory.querySelectorAll('button');
+        for(let i = 0; i < sortBtn.length; i++){
+            sortBtn[i].classList.remove('Active');
+        }
+        document.getElementById(tabId).classList.add('Active');
+        this.setState({
+            sortType: sortType,
+        });
+        this._getMovies();
+        //re render
+        //this.forceUpdate();
     }
 
 
@@ -58,7 +71,7 @@ class App extends Component {
         } = this;
         return (
             
-            <div className={movies ? "App" : "App--loading"}>
+            <div className={movies ? 'App' : 'App--loading'}>
                 <Header onChange={_changeSortType} />
                 <div className="Contents">
                     {movies ? this._renderMovies() : 'Loading'}
